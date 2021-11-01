@@ -1,0 +1,11 @@
+## Interface: 20502
+## Title: Live To Win
+## Version: 1.0
+## Notes: Audio Combat Enhancement
+## Author: rodriada000 
+## SavedVariables: LiveToWin_Config
+
+LiveToWinConfig.lua
+LiveToWin.lua
+LiveToWin.xml
+
