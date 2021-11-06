@@ -1,6 +1,6 @@
 ## Interface: 20502
 ## Title: Live To Win
-## Version: 1.0
+## Version: 1.1
 ## Notes: Audio Combat Enhancement
 ## Author: rodriada000 
 ## SavedVariables: LiveToWin_Config
