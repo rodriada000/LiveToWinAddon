@@ -10,7 +10,7 @@ local function StopPlaying(self)
         StopMusic()
         isPlaying = false
     end
-end 
+end
 
 local function UpdateLiveToWin(self, elapsed)
 
@@ -18,8 +18,9 @@ local function UpdateLiveToWin(self, elapsed)
     combatStopTime = combatStopTime + elapsed
 
     -- ensure music is not playing and dont do anything when setting is 0 ("off")
-    if LiveToWin_Config.StopAfterSeconds == 0 then
+    if LiveToWin_Config.StopAfterSeconds == 0 or LiveToWin_Config.StopMusic then
         StopPlaying()
+        LiveToWin_Config.StopMusic = false
         return
     end
 
@@ -54,6 +55,5 @@ function LiveToWin_OnEvent(self, event, ...)
         LiveToWin:SetSize(100, 50)
         LiveToWin:SetPoint("TOP", "Minimap", "BOTTOM", 5, -5)
         LiveToWin:SetScript("OnUpdate", UpdateLiveToWin)
-        -- LiveToWin:Show()
     end
 end

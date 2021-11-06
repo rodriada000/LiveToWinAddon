@@ -7,5 +7,6 @@
 
 LiveToWinConfig.lua
 LiveToWin.lua
+LiveToWinMiniMenu.lua
 LiveToWin.xml
 
