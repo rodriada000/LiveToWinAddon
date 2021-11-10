@@ -99,7 +99,9 @@ Frame:SetScript("OnEvent", function(...)
             bottom = 4
         }
     });
-
+	MiniPanelFrame:SetBackdropColor(0, 0, 0, 0);
+	MiniPanelFrame:SetBackdropBorderColor(1, 1, 1, 0);
+		
     MiniPanelFrame:SetScript("OnEnter", function(...)
         MiniPanelFrame:SetBackdropColor(0, 0, 0, 0.75);
         MiniPanelFrame:SetBackdropBorderColor(1, 1, 1, 0.25);
