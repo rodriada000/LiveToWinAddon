@@ -31,6 +31,10 @@ local function InitDefaultConfigValues()
         LiveToWin_Config = {} -- allocate a table to store your saved variables (the table will be saved to disk on logout)
     end
 
+    if LiveToWin_Config.PlayAlternative == nil then
+        LiveToWin_Config.PlayAlternative = false
+    end
+
     if LiveToWin_Config.StopAfterSeconds == nil then
         LiveToWin_Config.StopAfterSeconds = 30
     end
@@ -80,6 +84,15 @@ volumeCheckButton:SetScript("OnClick", function()
     ShowOrHideMiniMenu()
 end);
 
+local altCheckButton = CreateFrame("CheckButton", "ConfigCheckboxIsAltVersion", ConfigPanelFrame, "ChatConfigCheckButtonTemplate");
+altCheckButton:SetPoint("TOPLEFT", 24, -125);
+altCheckButton.tooltip = "Play the music without South Park audio overlay";
+getglobal(altCheckButton:GetName() .. 'Text'):SetText("Play Alternative Version");
+altCheckButton:SetScript("OnClick", function()
+    LiveToWin_Config.PlayAlternative = not LiveToWin_Config.PlayAlternative
+    ShowOrHideMiniMenu()
+end);
+
 timeSlider:SetScript("OnValueChanged", function(self, value)
     LiveToWin_Config.StopAfterSeconds = floor(value)
     MiniSlider:SetValue(floor(value))
@@ -97,6 +110,8 @@ Frame:SetScript("OnEvent", function(...)
     timeSlider:SetValue(LiveToWin_Config.StopAfterSeconds)
     menuCheckButton:SetChecked(LiveToWin_Config.DisplayMenu)
     volumeCheckButton:SetChecked(LiveToWin_Config.DisplayVolSlider)
+    altCheckButton:SetChecked(LiveToWin_Config.PlayAlternative)
+
 
     LiveToWinMiniPanel:SetUserPlaced(true)
 

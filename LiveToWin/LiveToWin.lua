@@ -40,7 +40,11 @@ local function UpdateLiveToWin(self, elapsed)
         if isPlaying == false and inCombat == true then
             isPlaying = true;
             combatStopTime = 0;
-            PlayMusic("Interface\\AddOns\\LiveToWin\\audio\\LivetoWin.mp3");
+            if LiveToWin_Config.PlayAlternative == true then
+                PlayMusic("Interface\\AddOns\\LiveToWin\\audio\\LivetoWin_Full.mp3");
+            else
+                PlayMusic("Interface\\AddOns\\LiveToWin\\audio\\LivetoWin.mp3");
+            end
         end
     end
 end
