@@ -1,6 +1,6 @@
-## Interface: 40400
+## Interface: 11501
 ## Title: Live To Win
-## Version: 1.5
+## Version: 1.6
 ## Notes: Audio Combat Enhancement
 ## Author: rodriada000 
 ## SavedVariables: LiveToWin_Config

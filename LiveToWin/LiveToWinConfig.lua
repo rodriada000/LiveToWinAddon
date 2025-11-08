@@ -6,8 +6,10 @@ ConfigPanelFrame = CreateFrame("Frame", "LiveToWinConfigPanel", UIParent);
 -- Register in the Interface Addon Options GUI
 -- Set the name for the Category for the Options Panel
 ConfigPanelFrame.name = "Live To Win";
+
 -- Add the panel to the Interface Options
-InterfaceOptions_AddCategory(ConfigPanelFrame);
+local category = Settings.RegisterCanvasLayoutCategory(ConfigPanelFrame, "Live To Win")
+Settings.RegisterAddOnCategory(category)
 
 local minValue = 0
 local maxValue = 100
